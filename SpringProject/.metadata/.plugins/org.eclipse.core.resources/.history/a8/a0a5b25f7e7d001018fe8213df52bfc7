@@ -1,0 +1,85 @@
+package com.ecom.produtcatalog.config;
+
+import java.util.Arrays;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+import com.ecom.produtcatalog.model.Category;
+import com.ecom.produtcatalog.model.Product;
+import com.ecom.produtcatalog.repository.CategoryRepository;
+import com.ecom.produtcatalog.repository.ProductRepository;
+
+@Component
+public class Driver implements CommandLineRunner {
+
+    private final ProductRepository productRepository;
+    private final CategoryRepository categoryRepository;
+
+    public Driver(ProductRepository productRepository, CategoryRepository categoryRepository) {
+        this.productRepository = productRepository;
+        this.categoryRepository = categoryRepository;
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+
+        // Clear all existing data
+        productRepository.deleteAll();
+        categoryRepository.deleteAll();
+
+        // Create categories
+        Category electronics = new Category();
+        electronics.setName("Electronics");
+
+        Category clothing = new Category();
+        clothing.setName("Clothing");
+
+        Category home = new Category();
+        home.setName("Home and Kitchen");
+
+        categoryRepository.saveAll(Arrays.asList(electronics, clothing, home));
+
+        // Create products with correct references
+        Product phone = new Product();
+        phone.setName("Smartphone");
+        phone.setDescription("Latest model smartphone with amazing features");
+        phone.setImageUrl("https://placehold.co/600x400");
+        phone.setPrice(699.99);
+        phone.setCategory(electronics);
+
+        Product laptop = new Product();
+        laptop.setName("Laptop");
+        laptop.setDescription("High Performance Laptop for work and play");
+        laptop.setImageUrl("https://placehold.co/600x400");
+        laptop.setPrice(999.99);
+        laptop.setCategory(electronics);
+
+        Product jacket = new Product();
+        jacket.setName("Jacket");
+        jacket.setDescription("Warm and cozy jacket for winter");
+        jacket.setImageUrl("https://placehold.co/600x400");
+        jacket.setPrice(159.99);
+        jacket.setCategory(clothing);
+
+        Product blender = new Product();
+        blender.setName("Blender");
+        blender.setDescription("High-speed blender for smoothies and more");
+        blender.setImageUrl("https://placehold.co/600x400");
+        blender.setPrice(59.99);
+        blender.setCategory(home);
+        
+        
+        Product shirt = new Product();
+        shirt.setName("T-Shirt");
+        shirt.setDescription("High Quality Silk t Shirt");
+        shirt.setImageUrl("https://placehold.co/600x400");
+        shirt.setPrice(29.99);
+        shirt.setCategory(clothing);
+
+        // Save all products
+        productRepository.saveAll(Arrays.asList(phone, laptop, jacket, blender));
+
+        System.out.println(" Data initialized successfully!");
+    }
+}

@@ -1,0 +1,5 @@
+package com.ecom.produtcatalog.controller;
+
+public class ProductController {
+
+}

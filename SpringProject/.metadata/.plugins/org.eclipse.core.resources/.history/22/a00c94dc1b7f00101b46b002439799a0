@@ -1,0 +1,24 @@
+package com.ecom.produtcatalog.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.ecom.produtcatalog.model.Product;
+import com.ecom.produtcatalog.repository.ProductRepository;
+
+@Service
+public class ProductService {
+	
+	private final ProductRepository Prepository = null;
+
+	
+	public List<Product> getAllProducts(){
+		return Prepository.findAll();
+	}
+	
+	public List<Product> getProductByCategory(Long categoryId){
+		return Prepository.findByCategoryId(categoryId);
+	}
+	
+}

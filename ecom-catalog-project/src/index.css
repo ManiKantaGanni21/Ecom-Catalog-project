@@ -1,0 +1,109 @@
+:root {
+  --primary: #6a11cb;
+  --secondary: #2575fc;
+  --accent: #ff8c42;
+  --light: #f9f9f9;
+  --dark: #1a1a1a;
+
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--dark);
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Heading gradient */
+.heading-gradient {
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Links */
+a {
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+a:hover {
+  color: var(--secondary);
+}
+
+/* Input & Select */
+input, select {
+  border-radius: 12px;
+  padding: 0.7em 1em;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+input:focus, select:focus {
+  border-color: var(--primary);
+  box-shadow: 0px 4px 10px rgba(106,17,203,0.25);
+  outline: none;
+}
+
+/* Buttons */
+button {
+  border-radius: 12px;
+  border: none;
+  padding: 0.7em 1.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+}
+button:active {
+  transform: translateY(0px);
+  box-shadow: none;
+}
+
+/* Product Cards */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
+}
+
+/* No products */
+.text-muted {
+  font-size: 1.1rem;
+  color: #888;
+  font-style: italic;
+}

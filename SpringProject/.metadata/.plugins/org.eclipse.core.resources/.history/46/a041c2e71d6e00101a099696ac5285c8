@@ -1,0 +1,26 @@
+package com.ecom.produtcatalog.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ecom.produtcatalog.model.Product;
+import com.ecom.produtcatalog.service.ProductService;
+
+@RestController
+public class ProductController {
+	
+	private final ProductService productservice;
+	
+	
+	
+	public ProductController(ProductService productservice) {
+		this.productservice = productservice;
+	}
+
+
+
+	public List<Product> getAllProducts(){
+		return productservice.getAllProducts();
+	}
+}
