@@ -1,0 +1,21 @@
+# ---- Spring Boot / Java ----
+target/
+*.class
+*.jar
+*.war
+*.iml
+/.settings/
+/.project
+/.classpath
+/.idea/
+
+# ---- React / Node ----
+node_modules/
+build/
+dist/
+.env
+
+# ---- System files ----
+.DS_Store
+Thumbs.db
+# Git ignore file 
